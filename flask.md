@@ -1,6 +1,6 @@
 # Flask for full stack web development
 
-- [Initial setup](flask/inital_setup.md)
+- [Initial setup](flask/initial_setup.md)
 - [Running and configuring dev server](flask/dev.md)
 - [Using html and css templates](flask/templates.md)
 - [Request and response](flask/request-response.md)
