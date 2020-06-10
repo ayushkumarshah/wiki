@@ -1,1 +1,7 @@
-/Users/ayushkumarshah/Desktop/notes/wiki/index.md
+# My notes wiki
+
+## AI
+
+- [Computer vision](cv.md)
+- [Flask](flask.md)
+

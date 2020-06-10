@@ -1,7 +1,1 @@
-# My notes wiki
-
-## AI
-
-- [Computer vision](cv.md)
-- [Flask](flask.md)
-
+/Users/ayushkumarshah/Desktop/notes/wiki/README.md
