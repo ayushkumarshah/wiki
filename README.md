@@ -1,7 +1,7 @@
 # My notes wiki
 
 ## AI
-
 - [Computer vision](cv.md)
-- [Flask](flask.md)
 
+## Python
+- [Flask](flask.md)
