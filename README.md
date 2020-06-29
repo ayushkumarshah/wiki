@@ -5,4 +5,4 @@
 
 ## Python
 - [Flask](flask.md)
-- [Python: Advanced Design Patterns](design-patterns.md)
+- [Python: Design Patterns](design-patterns.md)
