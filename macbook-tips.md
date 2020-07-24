@@ -1,0 +1,24 @@
+# Macbook Tips and Tricks
+
+- Activity monitor show all info: rm ~/Library/Preferences/com.apple.ActivityMonitor.plist
+- Spotlight search for file > Cmd + R > opens path
+- Cmd + L > highlight website name in browser
+- Cmd + K > Make links in text editor
+- Hotkeys corner
+- Cmd+Option+H > Hide all apps except current app
+- Cmd (+ Shift) + ~ or Cmd (+ Shift) + Tab
+- Hold cmd key to move inactive windows. 
+- Stationary pad: Cmd + I
+- During upload: Drag file from one finder to upload finder window.
+- Holding Cmd while dragging > moves instead of copy
+- Holding option key while clicking wifi icon
+- Option+Cmd+D > Hide/Unhide dock
+- Control+Cmd+D > Dictionary
+- Window > Merge all windows (Finder)
+- Cmd + Option + Delete > Permanent delete
+- Shift + Cmd + A (Finder) > Applications folder
+- Shift + Cmd + D (Finder) > Desktop folder
+- Hold Cmd + Click application > Open that application file in finder
+- Option + Notifications icon > Toggle do not disturb
+- Enable All tabs
+- Rename all files at once
