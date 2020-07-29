@@ -2,6 +2,7 @@
 
 ## AI
 - [Computer vision](cv.md)
+- [ML Life Cycle](ml-life-cycle.md)
 
 ## Python
 - [Flask](flask.md)
@@ -13,3 +14,5 @@
 ## [Vim](vim.md)
 
 ## [Macbook Tips](macbook-tips.md)
+
+## [General Tips and Tricks](tips.md)
