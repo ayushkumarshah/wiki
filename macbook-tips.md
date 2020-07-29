@@ -1,7 +1,7 @@
 # Macbook Tips and Tricks
 
 - Activity monitor show all info: rm ~/Library/Preferences/com.apple.ActivityMonitor.plist
-- Option + Space > Change keyboard input language
+- Ctrl + Space > Change keyboard input language
 - Spotlight search for file > Cmd + R > opens path
 - Cmd + L > highlight website name in browser
 - Cmd + K > Make links in text editor
