@@ -2,7 +2,7 @@
 
 ## AI
 - [Computer vision](cv.md)
-- [ML Life Cycle](ml-life-cycle.md)
+- [ML Life Cycle Webinar](ml-life-cycle.md)
 
 ## Python
 - [Flask](flask.md)
