@@ -1,5 +1,7 @@
 # My notes wiki
 
+## [Common Commands](common_commands.md) 
+
 ## AI
 - [Computer vision](cv.md)
 - [ML Life Cycle Webinar](ml-life-cycle.md)
