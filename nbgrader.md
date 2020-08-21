@@ -1,6 +1,6 @@
 # Setting up nbgrader exchange for release and collect
 
-## 1. Creating directories for exchange setting:
+## 1. Create directories for exchange
 
 ```console
 $ mkdir /tmp/exchange
@@ -9,18 +9,20 @@ $ mkdir -p /tmp/exchange/ai_course_id/inbound
 $ chmod ugo+rw /tmp/exchange
 ```
 
-## 2. Create file nbgrader_config.py file at the directory containing source and release folders.
+## 2. Create nbgrader_config.py 
 
-Add the following lines in `nbgrader_config.py`
+- Create a file `nbgrader_config.py` in the directory containing source and release folders
 
-```python
-c = get_config()
-c.Exchange.course_id = "ai_course_id"
-c.Exchange.root = "/tmp/exchange"
-c.ExecutePreprocessor.timeout = -1
-```
+- Add the following lines in `nbgrader_config.py`
 
-## 3. Nbgrader package fix:
+  ```python
+  c = get_config()
+  c.Exchange.course_id = "ai_course_id"
+  c.Exchange.root = "/tmp/exchange"
+  c.ExecutePreprocessor.timeout = -1
+  ```
+
+## 3. Nbgrader 0.5.5 package fix:
 
 ### i. Make changes to nbgrader package codes:
 
@@ -36,7 +38,7 @@ located in the nbgrader package:
   - If the package is installed inside the main python, the location is similar to this
   `/Users/username/.local/lib/python3.7/site-packages/nbgrader/server_extensions/`
 
-Modify according to the changes here: [Changes](https://github.com/jupyter/nbgrader/pull/1239/commits/0ee032fdf40354a264855e80722a164eb0309770)
+- Modify according to the changes here: [Changes](https://github.com/jupyter/nbgrader/pull/1239/commits/0ee032fdf40354a264855e80722a164eb0309770)
 
 #### `assignment_list/handlers.py`
 
