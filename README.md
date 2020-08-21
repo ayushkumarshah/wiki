@@ -12,6 +12,7 @@
 - [Jupyter Notebook Tricks](notebook-tricks.md)
 - [Matplotlib Tricks](matplotlib-tricks.md)
 - [NLP Tricks](nlp-tricks.md)
+- [Setting up nbgrader exchange](nbgrader.md)
 
 ## [Vim](vim.md)
 
