@@ -63,7 +63,7 @@ for config, filename in NbGrader._load_config_files("nbgrader_config", path=path
 ### ii. Downgrade sqlalchemy to version 1.2.18
 
 ```console
-pip install sqlalchemy==1.2.18
+$ pip install sqlalchemy==1.2.18
 ```
 
 ### iii. Restart the terminal and you are good to go.
