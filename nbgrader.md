@@ -32,7 +32,7 @@ located in the nbgrader package:
   - If the package is installed inside a conda environment, the location  is similar to this:
   `/Users/username/miniconda3/envs/env_name/lib/python3.x/site-packages/nbgrader/server_extensions/`
 
-  - If the package is installed inside a conda base environment, the location might is similar to this:
+  - If the package is installed inside a conda base environment, the location is similar to this:
   `/Users/username/miniconda3/lib/python3.x/site-packages/nbgrader/server_extensions/`
 
   - If the package is installed inside the main python, the location is similar to this
