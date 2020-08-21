@@ -3,10 +3,10 @@
 ## 1. Creating directories for exchange setting:
 
 ```console
-mkdir /tmp/exchange
-mkdir -p /tmp/exchange/ai_course_id/outbound
-mkdir -p /tmp/exchange/ai_course_id/inbound
-chmod ugo+rw /tmp/exchange
+$ mkdir /tmp/exchange
+$ mkdir -p /tmp/exchange/ai_course_id/outbound
+$ mkdir -p /tmp/exchange/ai_course_id/inbound
+$ chmod ugo+rw /tmp/exchange
 ```
 
 ## 2. Create file nbgrader_config.py file at the directory containing source and release folders.
@@ -24,11 +24,19 @@ c.ExecutePreprocessor.timeout = -1
 
 ### i. Make changes to nbgrader package codes:
 
-Modify the files `assignment_list/handlers.py` and `validate_assignment/handlers.py` located in the nbgrader package: 
+- Open the files `assignment_list/handlers.py` and `validate_assignment/handlers.py` 
+located in the nbgrader package: 
 
-`/Users/username/miniconda3/envs/your_virtual_env/lib/python3.6/site-packages/nbgrader/server_extensions/`
+  - If the package is installed inside a conda environment, the location  is similar to this:
+  `/Users/username/miniconda3/envs/env_name/lib/python3.x/site-packages/nbgrader/server_extensions/`
 
-according to the changes here: [Changes](https://github.com/jupyter/nbgrader/pull/1239/commits/0ee032fdf40354a264855e80722a164eb0309770)
+  - If the package is installed inside a conda base environment, the location might is similar to this:
+  `/Users/username/miniconda3/lib/python3.x/site-packages/nbgrader/server_extensions/`
+
+  - If the package is installed inside the main python, the location is similar to this
+  `/Users/username/.local/lib/python3.7/site-packages/nbgrader/server_extensions/`
+
+Modify according to the changes here: [Changes](https://github.com/jupyter/nbgrader/pull/1239/commits/0ee032fdf40354a264855e80722a164eb0309770)
 
 #### `assignment_list/handlers.py`
 
@@ -58,5 +66,5 @@ for config, filename in NbGrader._load_config_files("nbgrader_config", path=path
 pip install sqlalchemy==1.2.18
 ```
 
-Restart the terminal and you are good to go.
+### iii. Restart the terminal and you are good to go.
 
