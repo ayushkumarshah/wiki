@@ -45,12 +45,6 @@ located in the nbgrader package:
 ```python
 # for config in NbGrader._load_config_files("nbgrader_config", path=paths, log=self.log):
 for config, filename in NbGrader._load_config_files("nbgrader_config", path=paths, log=self.log):
-
-...
-...
-
-# for new_config in NbGrader._load_config_files("nbgrader_config", path=[os.getcwd()], log=self.log):
-for new_config, filename in NbGrader._load_config_files("nbgrader_config", path=[os.getcwd()], log=self.log):
 ```
 
 #### `validate_assignment/handlers.py`
