@@ -1,5 +1,18 @@
 # Jupyter notebook / Colab Tricks
 
+## Displaying images
+
+```markdown
+<center>
+<figure>
+<img src="https://drive.google.com/uc?id=1wsw2sDf5WcnuCuu-b0RZfi4rrK30FB8R" alt="Image name" >
+<figcaption align="center">Figure 1: Caption </figcaption>
+</figure>
+</center>
+```
+
+---
+
 ## Working with videos
 
 ### Downloading videos from google drive
@@ -46,6 +59,7 @@ output.release()
 Video('output.webm', height=360, width=512, embed=True, mimetype='video/webm')
 ```
 
+---
 
 ## To view code of .py file in notebook
 

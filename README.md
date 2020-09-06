@@ -3,16 +3,19 @@
 ## [Common Commands](common_commands.md) 
 
 ## AI
-- [Computer vision](cv.md)
-- [ML Life Cycle Webinar](ml-life-cycle.md)
+
+- [Computer vision](ai/cv.md)
+- [ML Life Cycle Webinar](ai/ml-life-cycle.md)
+- [NLP Tricks](ai/nlp-tricks.md)
 
 ## Python
-- [Flask](flask.md)
-- [Python: Design Patterns](design-patterns.md)
-- [Jupyter Notebook Tricks](notebook-tricks.md)
-- [Matplotlib Tricks](matplotlib-tricks.md)
-- [NLP Tricks](nlp-tricks.md)
-- [Setting up nbgrader exchange](nbgrader.md)
+
+- [Conda](python/conda.md)
+- [Flask](python/flask.md)
+- [Python: Design Patterns](python/design-patterns.md)
+- [Jupyter Notebook Tricks](python/notebook-tricks.md)
+- [Matplotlib Tricks](python/matplotlib-tricks.md)
+- [Setting up nbgrader exchange](python/nbgrader.md)
 
 ## [Vim](vim.md)
 
