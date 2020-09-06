@@ -16,7 +16,7 @@
 ## Python
 
 - ### [General](python/general.md)
-- ### [Tricks](python/tricks.md)
+- ### [Tricks](python/tricks.ipynb)
 - ### [Conda](python/conda.md)
 - ### [Flask](python/flask.md)
 - ### [Python: Design Patterns](python/design-patterns.md)
