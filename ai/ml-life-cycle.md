@@ -1,6 +1,6 @@
 # Machine Learning Projects Lifecycle
 
-![image](images/ml_life_cycle.png)
+![life_cycle](images/ml_life_cycle.png)
 
 ## 1. Problem Definition
 
