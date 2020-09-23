@@ -24,3 +24,8 @@
 - ### [Matplotlib Tricks](python/matplotlib-tricks.md)
 - ### [Setting up nbgrader exchange](python/nbgrader.md)
 
+## Research
+
+- ### [SymbolScraper](Research/symbolscraper.md)
+- ### [ScanSD](Research/scanssd.md)
+

@@ -10,3 +10,24 @@
 - http://keep.new
 - http://meet.new
 - http://cal.new
+
+## Convert md to pdf
+
+### Conversion
+
+```zsh
+pandoc --highlight-style zenburn --toc -N Week*.md -o notes.pdf
+```
+N - subsection number enable
+
+### List styles
+
+```zsh
+pandoc --list-highlight-styles
+```
+
+### List languages supported
+
+```zsh
+pandoc --list-highlight-languages
+```
