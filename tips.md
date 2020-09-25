@@ -31,3 +31,9 @@ pandoc --list-highlight-styles
 ```zsh
 pandoc --list-highlight-languages
 ```
+
+## COnvert rmd to pdf
+
+```zsh
+R -e "rmarkdown::render('file.rmd OR file.md', output_file = 'file.pdf')" 
+```

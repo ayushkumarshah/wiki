@@ -17,6 +17,7 @@
 
 - ### [General](python/general.md)
 - ### [Tricks](python/tricks.ipynb)
+- ### [Faster Python Code](python/optimization.md)
 - ### [Conda](python/conda.md)
 - ### [Flask](python/flask.md)
 - ### [Python: Design Patterns](python/design-patterns.md)
@@ -29,3 +30,6 @@
 - ### [SymbolScraper](Research/symbolscraper.md)
 - ### [ScanSD](Research/scanssd.md)
 
+## Others
+
+- ### [Further studies](studies.md) 
