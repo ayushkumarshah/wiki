@@ -1,5 +1,136 @@
 # Jupyter notebook / Colab Tricks
 
+## View external python file code in notebook
+
+```python
+!pygmentize python_file.py
+```
+
+Example:
+```python
+!pygmentize train/model.py
+```
+
+## Autoreload modules before execution
+
+While loading the modules, load the “autoreload” extension so that you can change
+code in the modules and the changes get updated automatically. For more info, 
+see [autoreload documentation](https://ipython.org/ipython-doc/3/config/extensions/autoreload.html)
+
+```python
+%load_ext autoreload
+%autoreload 2
+from foo import some_function
+some_function()
+>>> 42
+```
+
+```python
+# open foo.py in an editor and change some_function to return 43
+some_function()
+>>> 20
+```
+
+## Time magic functions
+
+### Line mode
+```python
+%timeit [-n<N> -r<R> [-t|-c] -q -p<P> -o] statement
+```
+
+Options: 
+
+`-n<N>:` execute the given statement `<N>` times in a loop. If `<N>` is not provided, `<N>` is determined so as to get sufficient accuracy.
+
+`-r<R>:` number of repeats `<R>,` each consisting of `<N>` loops, and take the best result. Default: 7
+
+`-t:` use time.time to measure the time, which is the default on Unix. This function measures wall time.
+
+`-c:` use time.clock to measure the time, which is the default on Windows and measures wall time. On Unix, resource.getrusage is used instead and returns the CPU user time.
+
+`-p<P>:` use a precision of `<P>` digits to display the timing result. Default: 3
+
+`-q:` Quiet, do not print result.
+
+`-o:` return a TimeitResult that can be stored in a variable to inspect
+
+Example:
+
+```
+%timeit function_name(args)
+```
+
+### Cell mode
+```python
+%%timeit [-n<N> -r<R> [-t|-c] -q -p<P> -o] setup_code code code…
+```
+
+Example
+
+```python
+%%timeit
+for i, j in enumerate(range(1, 10, 2)):
+    print(i, j)
+```
+
+## To create and write directly to python file
+
+```python
+%%writefile python_file.py
+import numpy as np
+print(np.ones(2,3))
+```
+
+## Running an external python file as a program
+
+```python
+%run [-n -i -e -G]
+     [( -t [-N<N>] | -d [-b<N>] | -p [profile options] )]
+     ( -m mod | file ) [args] 
+```
+
+Options:
+
+`-n` : Don't run __main__. Useful when you want to reload the function
+definitions without calling the code.
+
+
+Example:
+```python
+%run -n python_file.py
+```
+## Debugger
+
+Activate the interactive debugger.
+
+```python
+%debug [--breakpoint FILE:LINE] [statement [statement ...]]
+```
+
+## Widgets
+
+### Dropdown widget
+
+Create the widget
+
+```python
+%%writefile widget.py
+import ipywidgets as widgets
+score = widgets.Dropdown(
+        value= None,
+        options=['Satisfactory', 'Not Satisfactory', 'Need to use another Metric',None],
+        description='Ans:',
+    )
+display(score);
+```
+
+Run the widget
+
+```python
+%run widget.py
+print(score.value)
+```
+
 ## Displaying images
 
 ```markdown
@@ -18,17 +149,17 @@
 ### Downloading videos from google drive
 
 ```python
-!wget --no-check-certificate -q -O 'airpaint.webm' 'https://docs.google.com/uc?export=download&id=1B8QVEefZu6mvOWUMxGXgWTWmLxsMXeDH'
-!wget --no-check-certificate -q -O 'airpaint.mp4' 'https://docs.google.com/uc?export=download&id=1B8QVEefZu6mvOWUMxGXgWTWmLxsMXeDH'
+!wget --no-check-certificate -q -O 'video_file.webm' 'https://docs.google.com/uc?export=download&id=1B8QVEefZu6mvOWUMxGXgWTWmLxsMXeDH'
+!wget --no-check-certificate -q -O 'video_file.mp4' 'https://docs.google.com/uc?export=download&id=1B8QVEefZu6mvOWUMxGXgWTWmLxsMXeDH'
 ```
 
 ### Displaying videos
 
 ```python
-from IPython.display import Video
-Video('airpaint.webm', height=360, width=512, 
+from IPython.core.display import Video
+Video('video_file.webm', height=360, width=512, 
         embed=True, mimetype='video/webm')
-Video('airpaint.mp4', height=360, width=512, 
+Video('video_file.mp4', height=360, width=512, 
         embed=True)
 ```
 
@@ -61,31 +192,3 @@ Video('output.webm', height=360, width=512, embed=True, mimetype='video/webm')
 
 ---
 
-## To view code of .py file in notebook
-
-```python
-!pygmentize train/model.py
-```
-
-## To create and write directly to python file
-
-```python
-%%writefile ex9q1.py
-import ipywidgets as widgets
-
-ex9q1 = widgets.Dropdown(
-        value= None,
-        options=['Satisfactory', 'Not Satisfactory', 'Need to use another Metric',None],
-        description='Ans:',
-    )
-display(ex9q1);
-```
-
-## Run dropdown widgets
-
-```python
-%run ex9q1.py
-### BEGIN HIDDEN TESTS
-assert(ex9q1.value == "Satisfactory")
-### END HIDDEN TESTS
-```
