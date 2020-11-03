@@ -6,6 +6,7 @@
 - ### [Vim](vim.md)
 - ### [Macbook Tips](macbook-tips.md)
 - ### [General Tips and Tricks](tips.md)
+- ### [Bash Shell Scripting](bash.md)
 
 ## AI
 
