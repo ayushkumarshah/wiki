@@ -13,13 +13,21 @@
 |`more file.txt`|Show file contents (similar to cat but allows to move up and down)|
 |`rm -ir`|Remove. i - prompt to ask permission for each file. r - recursively delete|
 |`find / -name "file_name" [2>/dev/null]` <br> Eg: `find \ -name "*backup*" 2/dev/null`| Find file from the root directory <br> 2/dev/null: 2 takes error output and redirects to dev/null where it is deleted|
-|`grep text_to_search /path/to/file`|Search for contents in a file|
+|`find . -not -name "file_name"`|Find files not matching the filename|
+|`find . -name "file_name" | xargs -I % rm %`|Find and delete files matching the filename|
+|`find . -name "file_name" -exec rm -i {} \;`|Find and delete files matching the filename|
+|`find . -name "file_name" -exec grep "Hello" -i {} \;`|Find and search "Hello" in files matching the filename|
+|`find -E . -regex ".*/file_name[0-9].sh"`|Find files matching the regular expression (this syntax works only in osx)|
+|`find -E . -not -regex ".*/file_name[0-9].sh"`|Find files not matching the regular expression (this syntax works only in osx)|
+|`grep [-i] text_to_search /path/to/file`|Search for contents in a file , i - case insensitive|
+|`grep -v text_to_search /path/to/file`|Search for contents not matching the pattern in a file|
 |`command | grep text_to_search` <br> Eg: `find / -name "*backup*" 2>/dev/null | grep $USER`|Using pipe to combine grep with other commands|
 |`command > file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, overwrites the contents of the file.|
 |`command >> file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, appends the outputs to the contents of the file.|
 |`awk`|very powerful command for pattern scanning and processing|
 
 test command and [[]] are equivalent
+
 
 ## Permissions
 
