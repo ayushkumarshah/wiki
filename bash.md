@@ -15,6 +15,11 @@
 |`find / -name "file_name" [2>/dev/null]` <br> Eg: `find \ -name "*backup*" 2/dev/null`| Find file from the root directory <br> 2/dev/null: 2 takes error output and redirects to dev/null where it is deleted|
 |`grep text_to_search /path/to/file`|Search for contents in a file|
 |`command | grep text_to_search` <br> Eg: `find / -name "*backup*" 2>/dev/null | grep $USER`|Using pipe to combine grep with other commands|
+|`command > file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, overwrites the contents of the file.|
+|`command >> file.txt`|adds output of command to file.txt. Creates a new file if does not exist. If exists, appends the outputs to the contents of the file.|
+|`awk`|very powerful command for pattern scanning and processing|
+
+test command and [[]] are equivalent
 
 ## Permissions
 
@@ -57,6 +62,7 @@ chmod o+r script_name
 
 ```zsh
 #!/bin/bash
+# The above line is called chebang / shebang
 
 # $USER -> "user_name"
 # $HOME -> "/Users/user_name"
@@ -66,6 +72,9 @@ DESKTOP_PATH_="$HOME/Desktop/"
 
 # Use backticks to assign command outputs to a variable directly. E.g. below
 DATE=`date +%d_%m_%Y`
+
+# Alternative is to use $()
+# DATE=$(date +%d_%m_%Y)
 
 BACKUP_PATH="$DESKTOP_PATH/codes/"
 BACKUP="backup_"
@@ -94,6 +103,85 @@ else
   echo $DATE " There was a problem creating the backup file." >> $HOME/error.log
 fi
 
+```
+
+## Simple shell script with arguments to create another script
+
+```zsh
+#!/bin/bash
+
+# Arguments defined as $1 $2 $3 and so on. But ${10} when 2 digits
+FILENAME=$1.sh
+
+# Check if file exists: 2 ways
+# if test -e $FILENAME OR
+while [[ -e $FILENAME ]] 
+do
+  echo -n "file already exists, are you sure you would like to overwrite? (y/n)"
+  read ANSWER
+  case $ANSWER in
+    y|Y|[yY][eE][sS])
+      break
+      ;;
+    n|N|[nN][oO])
+      read -p "enter the new filename" FILENAME
+      FILENAME=$FILENAME.sh
+      ;;
+  esac
+done
+echo "#!/bin/bash" > $FILENAME
+chmod +x $FILENAME
+vim $FILENAME
+```
+
+## Simple shell script to search files and copy it to a directory
+
+```zsh
+#!/bin/bash
+
+SEARCH_DIR=$HOME/Downloads
+
+FOUND_DIR=$HOME/Desktop/codes/found
+mkdir -p $FOUND_DIR
+
+# Search according to modified time less than 1 day ago
+find $SEARCH_DIR -mtime -1 -type f -iname "*.txt" | xargs -I % cp % $FOUND_DIR
+# -1 means 1 day ago
+# f means search limited to only files
+
+# xargs used to pass output of 1st command as argument to 2nd command.
+# -I is used to create a placeholder for the argument. 
+# % is the placeholder. It can be symbols other than % as well.
+```
+
+## Simple shell script to extract components causing error in a log file
+
+Example of error
+
+```md
+Aug 19 20:24:03 ip-172-31-190-196 amazon-ssm-agent.amazon-ssm-agent[2142]: 2020-08-19 20:24:03 ERROR Health ping failed with error - EC2RoleRequestError: no EC2 instance role found
+```
+
+```zsh
+#!/bin/bash
+
+LOGFILE=samplelog
+
+# Capturing each line of output from grep in variable named line
+while read -r line
+do
+  # To extract component, we use awk
+  component=$(awk {'print $5'} | cut -d : -f 1)
+  # Works as same component=`awk {'print $5'} | cut -d : -f 1`
+  # -d means delimiter used to cut which is :
+  # -f 1 means choose field number 1 from the cut results
+  echo -e "$component \n">> comp_errors
+  # -e tells to interpret \n as new line
+# -i  means case insensitive
+done < <(grep -i error $LOGFILE)
+# 1st < means input to the while loop
+# 2nd < means process substitution i.e. executes the command inside brackets,
+# saves the output to a temporary file and then deletes it
 ```
 
 ## Cron Tab
