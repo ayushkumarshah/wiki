@@ -14,7 +14,7 @@
 |`rm -ir`|Remove. i - prompt to ask permission for each file. r - recursively delete|
 |`find / -name "file_name" [2>/dev/null]` <br> Eg: `find \ -name "*backup*" 2/dev/null`| Find file from the root directory <br> 2/dev/null: 2 takes error output and redirects to dev/null where it is deleted|
 |`find . -not -name "file_name"`|Find files not matching the filename|
-|`find . -name "file_name" | xargs -I % rm %`|Find and delete files matching the filename|
+|```find . -name "file_name" | xargs -I % rm %```|Find and delete files matching the filename|
 |`find . -name "file_name" -exec rm -i {} \;`|Find and delete files matching the filename|
 |`find . -name "file_name" -exec grep "Hello" -i {} \;`|Find and search "Hello" in files matching the filename|
 |`find -E . -regex ".*/file_name[0-9].sh"`|Find files matching the regular expression (this syntax works only in osx)|

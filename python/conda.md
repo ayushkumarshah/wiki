@@ -30,6 +30,12 @@ $ pip freeze > requirements.txt
 $ conda env create -f environment.yml
 ```
 
+## Update packages from yml file
+
+```zsh
+$ conda env update --file environment.yml
+```
+
 ## List installed packages
 
 ```console
