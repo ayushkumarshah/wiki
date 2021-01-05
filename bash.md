@@ -50,8 +50,43 @@
 |`top` or `htop` or `ytop` or `gotop`             |Process info and CPU Usage  (You need to install htop or ytop)|
 |`tree [-aldf][-L level][-P pattern][-I pattern][-o filename] `|display directory's contents in a  tree <br> a - all files <br> l - symbolic links <br> d - directories only <br> L - limit number of levels of directory <br> I - files not matching pattern <br> P - files matching pattern <br> o - output to filename <br> You need to install tree|
 
-test command and [[]] are equivalent
+`test some-condition` command and `[[some-condition]]` are equivalent
 
+## Running bash script in debug mode
+
+### Method 1
+
+```zsh
+bash -x script_name
+```
+
+### Method 2
+
+Modify the script
+
+```bash
+#!bin/bash -x
+...
+...
+exit 0
+```
+
+### Method 3
+
+If only certain portions to be debugged
+
+```bash
+#!bin/bash
+set -x
+...
+code to be debugged
+...
+set +x
+...
+code not to be debugged
+...
+exit 0
+```
 
 ## Permissions
 
