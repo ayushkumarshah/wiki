@@ -412,6 +412,21 @@ Examples:
 |git reset <file> | remove file from the current index (the "about to be committed" list) without changing anything else.
 |git checkout filename | Undo local changes to latest commit
 
+
+## GitHub ignore language
+
+- Create `.gitattributes` in main directory and add
+
+```
+directory/* linguist-vendored
+*.ipynb linguist-vendored
+OR
+*.ipynb linguist-language=Python
+
+.ipynb_checkpoints/* linguist-documentation
+dev.ipynb linguist-documentation
+```
+
 ## Ignore files that have already been committed to the repo
 
 ```console
