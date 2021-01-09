@@ -8,6 +8,7 @@
 - ### [General Tips and Tricks](tips.md)
 - ### [Bash Shell Scripting](bash.md)
 - ### [VimTex + Skim in Mac](vimtex.md)
+- ### [Pandoc settings](pandoc-settings.md)
 
 ## AI
 
