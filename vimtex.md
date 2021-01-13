@@ -63,4 +63,4 @@ $ ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefi
 
 ### Backward search usage:
 
-Command + click
+Ctrl + click

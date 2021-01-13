@@ -24,3 +24,18 @@ if __name__ == '__main__':
 ```console
 $ python python_code.py arg1 arg2
 ```
+
+## Generating requirements.txt correctly
+
+I found this more appropriate.
+
+```zsh
+pip list --format=freeze > requirements.txt
+```
+
+However, this can be done as well. Faced a few issues in this approach.
+
+```zsh
+pip list --format=freeze > requirements.txt
+```
+
