@@ -39,3 +39,14 @@ However, this can be done as well. Faced a few issues in this approach.
 pip list --format=freeze > requirements.txt
 ```
 
+## Current Datetime
+
+```python
+from datetime import datetime
+now = datetime.now().isoformat(timespec='seconds')
+print(now)
+# 2014-07-05T14:34:14
+now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(now)
+# 2014-07-05 14:34:14
+```
