@@ -5,6 +5,9 @@
 |||
 |--|--|
 |Cmd + down or Cmd + O | Launch any file in the default application
+|Cmd + Shift + O | Show notification bar
+|Ctrl + F2 | Control menu bar
+|Ctrl + F8 | Control status bar
 |Ctrl + Space | Change keyboard input language
 |Spotlight search for file > Cmd + R  |opens path
 |Cmd + L | highlight website name in browser
