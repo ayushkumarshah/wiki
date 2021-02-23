@@ -31,6 +31,7 @@
 
 ## Research
 
+- ### [Writing a Research Paper - Tricks](Research/paper-tricks.md)
 - ### [SymbolScraper](Research/symbolscraper.md)
 - ### [ScanSD](Research/scanssd.md)
 

@@ -39,3 +39,12 @@
 - Holding Cmd while dragging | moves instead of copy
 - Holding option key while clicking wifi icon
 - Window Merge all windows (Finder)
+
+
+## Open an application
+
+### Open finder at current location
+
+```zsh
+$ Open -a Finder .
+```

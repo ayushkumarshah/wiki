@@ -50,3 +50,5 @@ now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 print(now)
 # 2014-07-05 14:34:14
 ```
+
+> Note: Use jedi 0.17.2 for neovim coc to work.
