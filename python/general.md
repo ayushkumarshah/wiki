@@ -25,7 +25,7 @@ if __name__ == '__main__':
 $ python python_code.py arg1 arg2
 ```
 
-## Generating requirements.txt correctly
+## 2. Generating requirements.txt correctly
 
 I found this more appropriate.
 
@@ -36,10 +36,10 @@ pip list --format=freeze > requirements.txt
 However, this can be done as well. Faced a few issues in this approach.
 
 ```zsh
-pip list --format=freeze > requirements.txt
+pip freeze > requirements.txt
 ```
 
-## Current Datetime
+## 3. Current Datetime
 
 ```python
 from datetime import datetime
@@ -51,4 +51,19 @@ print(now)
 # 2014-07-05 14:34:14
 ```
 
+## 4. Printing error traceback
+
+```python
+import traceback
+try:
+    raise Exception('Bad exception with stupid message')
+except Exception as e:
+    traceback.print_exc()
+    # OR
+    msg = traceback.format_exc()
+    print(msg)
+```
+
+## 5. Jedi for Neovim
 > Note: Use jedi 0.17.2 for neovim coc to work.
+
