@@ -4,6 +4,7 @@
 
 - ### [Common Commands](common_commands.md) 
 - ### [Vim](vim.md)
+- ### [NeoVim](neovim.md)
 - ### [Macbook Tips](macbook-tips.md)
 - ### [General Tips and Tricks](tips.md)
 - ### [Bash Shell Scripting](bash.md)
