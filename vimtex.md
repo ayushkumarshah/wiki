@@ -10,6 +10,21 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'skim'
 let g:vimtex_view_skim_activate = 1
 let g:vimtex_view_skim_reading_bar = 1
+let g:vimtex_view_skim_sync = 1
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : 'temp',
+    \}
+    
+function! s:write_server_name() abort
+  let nvim_server_file = (has('win32') ? $TEMP : '/tmp') . '/vimtexserver.txt'
+  call writefile([v:servername], nvim_server_file)
+endfunction
+
+augroup vimtex_common
+  autocmd!
+  autocmd FileType tex call s:write_server_name()
+augroup END
+
 ```
 
 ### Usage:
@@ -18,28 +33,10 @@ Run :VimtexView
 
 ## Backward Search:
 
-For `neovim`, select the `Custom` preset from the drop-down list and set:
+For `neovim`, select the `Custom` preset from the drop-down list in the Pdf viewer (Skim) and set:
 
-- Command: nvr
-- Args: --remote-silent +"%line" "%file"
- 
-Please ensure that you have the `nvr` (neovim-remote) utility and the
-`pynvim` Python module available.
-
-Q: Does Vimtex work with neovim?
-
-A: Yes, but backward sync requires the `neovim-remote` utility. It may be
-   installed and used by vimtex as follows:
-
-1. Install the `pynvim` and `neovim-remote` modules for python3 (e.g.,
-  using `pip3 install --user pynvim neovim-remote`; if `python3 -c
-  "import pynvim"` returns without error and `nvr` starts neovim from
-  the command line, everything should be good to go).
-
-1. Configure your viewer to use `nvr --remote +"%line" "%file"` for
-  backward sync.
-
-   See https://github.com/mhinz/neovim-remote for more information on `nvr`.
+- Command: nvim
+- Args: --headless -c "VimtexInverseSearch %line '%file'"
 
 
 ### Usage:
