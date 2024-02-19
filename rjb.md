@@ -25,6 +25,7 @@ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 Not required but if does not work, try this too:
 
 ```bash
+sudo apt-get install libstdc++6
 conda install libgcc
 conda install -c conda-forge ncurses
 ```
