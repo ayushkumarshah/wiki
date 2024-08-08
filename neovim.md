@@ -10,6 +10,10 @@
 - Clone dotfiles-linux
 - Run the ln commands in setup.sh
 - Run nvim-dependencies.sh
+  - install fzf, ripgrep, ranger
+  - Mac: 
+    - `brew install fzf ranger ripgrep`
+    - `$(brew --prefix)/opt/fzf/inst`
 - Install python packages
   ```
   conda activate base

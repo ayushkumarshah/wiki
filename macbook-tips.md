@@ -4,6 +4,7 @@
 
 |||
 |--|--|
+|Cmd + Q | Force Quit
 |Cmd + down or Cmd + O | Launch any file in the default application
 |Cmd + Shift + O | Show notification bar
 |Ctrl + F2 | Control menu bar
