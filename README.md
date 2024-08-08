@@ -35,6 +35,7 @@
 - ### [Writing a Research Paper - Tricks](Research/paper-tricks.md)
 - ### [SymbolScraper](Research/symbolscraper.md)
 - ### [ScanSD](Research/scanssd.md)
+- ### [Michael Condon's thesis](Research/condon-thesis.md)
 
 ## Others
 
