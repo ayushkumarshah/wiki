@@ -21,6 +21,12 @@ $ conda env export --no-builds > environment.yml
 ## Or Create requirements.txt (earlier one preferred)
 
 ```console
+$ pip list --format=freeze > requirements.txt
+```
+
+OR
+
+```console
 $ pip freeze > requirements.txt
 ```
 
